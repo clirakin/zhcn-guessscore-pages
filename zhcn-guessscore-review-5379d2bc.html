@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>足球竞猜 · 理性洞察 | 猜球指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8f9fa;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      color: #1e2a3a;
+      padding: 1.5rem;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.03);
+      padding: 2.8rem 2rem 3.2rem;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 2rem 1.2rem 2.8rem;
+      }
+      body {
+        padding: 0.8rem;
+      }
+    }
+
+    /* hero */
+    .hero {
+      margin-bottom: 3.6rem;
+      text-align: center;
+    }
+
+    .hero-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: #eef3f8;
+      border-radius: 24px;
+      margin-bottom: 1.4rem;
+      font-size: 1.6rem;
+      color: #2c6b3f;
+    }
+
+    .hero h1 {
+      font-weight: 550;
+      font-size: 2.1rem;
+      letter-spacing: -0.01em;
+      color: #0f1a2b;
+      line-height: 1.3;
+      margin-bottom: 0.85rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #3d5063;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* section */
+    .section {
+      margin-top: 3.2rem;
+    }
+
+    .section:first-of-type {
+      margin-top: 0;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #5f7387;
+      background: #eef2f6;
+      padding: 0.15rem 0.8rem;
+      border-radius: 40px;
+      margin-bottom: 1.2rem;
+    }
+
+    h2 {
+      font-weight: 540;
+      font-size: 1.35rem;
+      color: #12202f;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .text-block {
+      margin-bottom: 1.5rem;
+      color: #233242;
+      font-size: 0.98rem;
+    }
+
+    .text-block p {
+      margin-bottom: 0.9rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem 1.2rem;
+      margin: 1.8rem 0 0.8rem;
+    }
+
+    @media (max-width: 500px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+      }
+    }
+
+    .feature-item {
+      background: #f7f9fc;
+      border-radius: 20px;
+      padding: 1.2rem 1.2rem 1.4rem;
+      transition: background 0.2s;
+    }
+
+    .feature-item h3 {
+      font-size: 0.95rem;
+      font-weight: 530;
+      color: #1b2b3e;
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-item p {
+      font-size: 0.88rem;
+      color: #405467;
+      line-height: 1.55;
+    }
+
+    .feature-icon {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+      display: inline-block;
+    }
+
+    .faq-mini {
+      background: #f4f7fa;
+      border-radius: 24px;
+      padding: 1.6rem 1.6rem 1.4rem;
+      margin: 2rem 0 1.4rem;
+    }
+
+    .faq-mini h3 {
+      font-size: 1rem;
+      font-weight: 550;
+      margin-bottom: 1.1rem;
+      color: #10212e;
+    }
+
+    .faq-item {
+      margin-bottom: 0.9rem;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      padding-bottom: 0.7rem;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      color: #1b2f41;
+      font-size: 0.92rem;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    .faq-a {
+      font-size: 0.86rem;
+      color: #4b5f72;
+    }
+
+    .link-footnote {
+      border-top: 1px solid #e4e9ef;
+      margin-top: 2.8rem;
+      padding-top: 1.8rem;
+      text-align: center;
+      font-size: 0.92rem;
+      color: #314459;
+    }
+
+    .link-footnote a {
+      color: #1b6b3a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .link-footnote a:hover {
+      border-bottom-color: #1b6b3a;
+    }
+
+    .muted-extra {
+      margin-top: 2.2rem;
+      font-size: 0.78rem;
+      color: #718397;
+      text-align: center;
+      letter-spacing: 0.01em;
+      border-top: 1px solid #eceff4;
+      padding-top: 1.6rem;
+    }
+
+    .btn-link {
+      display: inline-block;
+      background: #eef3f8;
+      color: #1b3d2a;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 480;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .btn-link:hover {
+      background: #dce6ef;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e2e7ed;
+      margin: 2.5rem 0 1rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero -->
+  <div class="hero">
+    <div class="hero-icon">⚽</div>
+    <h1>在信息与直觉之间<br>找到属于你的节奏</h1>
+    <p>这里并非预测的捷径，而是一面安静的镜子——<br>帮你梳理赛前数据、球队轮换与场外信号，让每一次判断都更清晰。</p>
+  </div>
+
+  <!-- 介绍 / 角度 -->
+  <div class="section">
+    <span class="section-label">关于这件事</span>
+    <div class="text-block">
+      <p>很多人把猜球看作单纯的运气博弈，但如果你愿意后退半步，会发现它更像一场关于信息整理的小型智力游戏。阵容、交锋记录、战术倾向、甚至旅途疲劳程度——这些碎片拼在一起，才构成完整的画面。</p>
+      <p><a href="https://zhcn-guessscore.com" style="color:#1b6b3a; text-decoration: none; font-weight: 500; border-bottom: 1px solid #bcd0c4;">足球竞猜</a> 所关注的，正是如何用更安静的方式面对这些变量。不鼓吹“必中”或“稳赢”，而是把工具和视角递给你，由你来做最后的决定。</p>
+    </div>
+  </div>
+
+  <!-- 特点 / 优势区 差异化卡片 -->
+  <div class="section">
+    <span class="section-label">不同之处</span>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <div class="feature-icon">📋</div>
+        <h3>数据摘要，而非噪音</h3>
+        <p>过滤掉无效信息，只保留与赛前判断相关的关键参照，比如近期场均射正、防守稳定性、主客场差异。</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🧩</div>
+        <h3>动态资讯聚合</h3>
+        <p>伤停更新、天气影响、赛前发布会线索——把零散的场外信号整理成可读的短讯，帮助你在下判断前多考虑一层。</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📊</div>
+        <h3>倾向不代表结论</h3>
+        <p>系统会呈现双方近期状态曲线与攻防倾向，但从不生成“推荐比分”。倾向只是参考，决策永远是你自己的。</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🧘</div>
+        <h3>克制，才更长久</h3>
+        <p>不设排行榜、不鼓励过度投入。我们更希望你用放松的心态来阅读，当成一种赛前思考的陪伴。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 使用场景 / 说明区 -->
+  <div class="section">
+    <span class="section-label">什么场景下会用到</span>
+    <div class="text-block">
+      <p>周末晚上有一场焦点对决，你只是想知道最近双方状态如何、核心球员是否轮休；或者你是一位喜欢研究战术的爱好者，想看看不同联赛的节奏差异——这些时候，一个干净、没有噪音的参考页面会比刷社交网络更有效率。</p>
+      <p>当然，如果你只是单纯喜欢比赛本身，也可以把它当作赛前预习：读一篇球队近况简报，再带着更完整的理解去欣赏九十分钟的较量。</p>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-mini">
+    <h3>一些常见的疑问</h3>
+
+    <div class="faq-item">
+      <span class="faq-q">⚡ 这里能告诉我哪边会赢吗？</span>
+      <div class="faq-a">不能，也没有任何地方可以真正“保证”结果。我们提供的是信息梳理工具，帮你看到更多侧面，但最终走势永远属于球场。</div>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">📅 数据更新及时吗？</span>
+      <div class="faq-a">尽可能覆盖主流联赛的最新赛前信息。不过足球世界充满临时变化，建议开赛前再快速确认一下首发名单。</div>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">🎯 我想更深入地分析某场对决，该从哪里开始？</span>
+      <div class="faq-a">可以从球队近期的攻防数据看起，再结合伤病与战意来判断。试着把每个信息当作拼图的一小块，而不是全部答案。</div>
+    </div>
+  </div>
+
+  <!-- 底部自然链接 -->
+  <div class="link-footnote">
+    <p style="margin-bottom: 0.4rem;">如果你希望更系统地了解这种思路，不妨花几分钟浏览</p>
+    <p><a href="https://zhcn-guessscore.com">足球竞猜</a>  —— 一个安静、不喧哗的信息角落。</p>
+  </div>
+
+  <!-- 极简footer -->
+  <div class="muted-extra">
+    <span>保持好奇   ·   保持清醒</span>
+  </div>
+
+</div>
+</body>
+</html>
